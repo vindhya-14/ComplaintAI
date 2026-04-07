@@ -1,5 +1,5 @@
-import { SprintTask } from "../src/models/index";
-import { connectDb } from "./_lib/db";
+import { SprintTask } from "./_lib/models";
+import { connectDb } from "./_lib/db.ts";
 
 type ApiRequest = {
   method?: string;

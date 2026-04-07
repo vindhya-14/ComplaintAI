@@ -1,6 +1,6 @@
-import { Issue, SprintTask } from "../src/models/index";
-import { runAnalysisPipeline } from "../src/services/gemini";
-import { connectDb } from "./_lib/db";
+import { Issue, SprintTask } from "./_lib/models";
+import { runAnalysisPipeline } from "../src/services/gemini.ts";
+import { connectDb } from "./_lib/db.ts";
 
 type ApiRequest = {
   method?: string;
