@@ -1,4 +1,4 @@
-import { Complaint } from "../src/models";
+import { Complaint } from "../src/models/index";
 import { connectDb } from "./_lib/db";
 
 type ApiRequest = {

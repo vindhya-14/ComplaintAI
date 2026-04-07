@@ -1,4 +1,4 @@
-import { Issue } from "../src/models";
+import { Issue } from "../src/models/index";
 import { connectDb } from "./_lib/db";
 
 type ApiRequest = {
