@@ -1,0 +1,5 @@
+{
+  "name": "Complaint Intelligence System",
+  "description": "AI-powered customer complaint analysis and prioritization system using a structured prompt pipeline.",
+  "requestFramePermissions": []
+}
