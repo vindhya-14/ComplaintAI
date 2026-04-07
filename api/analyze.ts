@@ -1,4 +1,4 @@
-import { Issue, SprintTask } from "./_lib/models";
+import { Issue, SprintTask } from "./_lib/models.ts";
 import { runAnalysisPipeline } from "../src/services/gemini.ts";
 import { connectDb } from "./_lib/db.ts";
 
