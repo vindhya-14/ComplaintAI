@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema, Document } from "mongoose";
 
 export interface IComplaint extends Document {
   text: string;
@@ -8,11 +8,13 @@ export interface IComplaint extends Document {
 
 const ComplaintSchema: Schema = new Schema({
   text: { type: String, required: true },
-  source: { type: String, default: 'user_input' },
-  createdAt: { type: Date, default: Date.now }
+  source: { type: String, default: "user_input" },
+  createdAt: { type: Date, default: Date.now },
 });
 
-export const Complaint = mongoose.model<IComplaint>('Complaint', ComplaintSchema);
+export const Complaint =
+  (mongoose.models.Complaint as mongoose.Model<IComplaint>) ||
+  mongoose.model<IComplaint>("Complaint", ComplaintSchema);
 
 export interface IIssue extends Document {
   issue: string;
@@ -35,10 +37,12 @@ const IssueSchema: Schema = new Schema({
   priorityScore: { type: Number, required: true },
   priorityLevel: { type: String, required: true },
   label: { type: String, required: true },
-  createdAt: { type: Date, default: Date.now }
+  createdAt: { type: Date, default: Date.now },
 });
 
-export const Issue = mongoose.model<IIssue>('Issue', IssueSchema);
+export const Issue =
+  (mongoose.models.Issue as mongoose.Model<IIssue>) ||
+  mongoose.model<IIssue>("Issue", IssueSchema);
 
 export interface ISprintTask extends Document {
   userStory: string;
@@ -54,8 +58,10 @@ const SprintTaskSchema: Schema = new Schema({
   acceptanceCriteria: [{ type: String }],
   storyPoints: { type: Number, required: true },
   selectedForSprint: { type: Boolean, default: false },
-  issueId: { type: Schema.Types.ObjectId, ref: 'Issue' },
-  createdAt: { type: Date, default: Date.now }
+  issueId: { type: Schema.Types.ObjectId, ref: "Issue" },
+  createdAt: { type: Date, default: Date.now },
 });
 
-export const SprintTask = mongoose.model<ISprintTask>('SprintTask', SprintTaskSchema);
+export const SprintTask =
+  (mongoose.models.SprintTask as mongoose.Model<ISprintTask>) ||
+  mongoose.model<ISprintTask>("SprintTask", SprintTaskSchema);
